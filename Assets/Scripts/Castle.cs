@@ -16,6 +16,9 @@ public class Castle : MonoBehaviour
     [SerializeField]
     private GameObject[] _unitsPrefabs;
 
+    [SerializeField]
+    private GameObject _enemyCastle;
+
 
     private int totalUnitsPrefabs;
 
@@ -70,6 +73,8 @@ public class Castle : MonoBehaviour
 
                 break;
         }
+
+        
 
     }
 

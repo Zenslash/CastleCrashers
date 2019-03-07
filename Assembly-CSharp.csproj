@@ -53,7 +53,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\AttackCastle.cs" />
      <Compile Include="Assets\Scripts\Castle.cs" />
+     <Compile Include="Assets\Scripts\Goal.cs" />
+     <Compile Include="Assets\Scripts\KnightUnit.cs" />
      <Compile Include="Assets\Scripts\Unit.cs" />
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>/home/artem/UnityProjects/CastleCrashers/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
