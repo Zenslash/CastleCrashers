@@ -15,12 +15,15 @@ public class KnightUnit : Unit
 
     private void Start()
     {
-
+        _enemyFaction = EnemyCastle.FactionName;
+        _healthComponent = GetComponent<HealthComponent>();
+        _currentGoal = new AttackCastle(EnemyCastle, this);
     }
 
     private void Update()
     {
-
+        if(_healthComponent.IsAlive)
+            _currentGoal.Execute();
     }
 
     #endregion
@@ -30,9 +33,21 @@ public class KnightUnit : Unit
 
     #region Public Methods
 
-    public override void Attack()
+    public override void Attack(GameObject enemyObject)
     {
-        
+        _isAttacking = true;
+
+        //Play animation
+        //Play sound
+        //Get Health component
+        HealthComponent enemyHealth = enemyObject.GetComponent<HealthComponent>();
+        //Deal damage
+        if(enemyHealth != null)
+        {
+            enemyHealth.DealDamage(_attackDamage);
+        }
+
+        _isAttacking = false;
     }
 
     #endregion

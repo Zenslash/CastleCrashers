@@ -17,7 +17,7 @@ public class Castle : MonoBehaviour
     private GameObject[] _unitsPrefabs;
 
     [SerializeField]
-    private GameObject _enemyCastle;
+    private Castle _enemyCastle;
 
 
     private int totalUnitsPrefabs;
@@ -26,6 +26,7 @@ public class Castle : MonoBehaviour
 
     #region Public Variables
 
+    public string FactionName;
 
     #endregion
 
@@ -37,7 +38,7 @@ public class Castle : MonoBehaviour
         Init();
 
         //For development purpose
-        spawnUnit(UNIT_TYPE.KNIGHT);
+        StartCoroutine(TEST_DeployUnitsWithDelay(2f));
     }
 
     #endregion
@@ -48,6 +49,14 @@ public class Castle : MonoBehaviour
     private void Init()
     {
         totalUnitsPrefabs = _unitsPrefabs.Length;
+    }
+
+
+    private IEnumerator TEST_DeployUnitsWithDelay(float delay)
+    {
+        spawnUnit(UNIT_TYPE.KNIGHT);
+        yield return new WaitForSeconds(delay);
+        StartCoroutine(TEST_DeployUnitsWithDelay(delay));
     }
 
     #endregion
@@ -63,6 +72,8 @@ public class Castle : MonoBehaviour
             case UNIT_TYPE.KNIGHT:
 
                 npc = Instantiate(_unitsPrefabs[0], _unitSpawnPoint);
+                KnightUnit comp = npc.GetComponent<KnightUnit>();
+                comp.EnemyCastle = _enemyCastle;
                 //Init stuff
 
                 break;

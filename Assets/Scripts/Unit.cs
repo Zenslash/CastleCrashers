@@ -14,8 +14,13 @@ public class Unit : MonoBehaviour
     protected float _moveSpeed;
     [SerializeField]
     protected float _attackRange;
+    [SerializeField]
+    protected int _attackDamage;
 
     protected Goal _currentGoal;
+    protected string _enemyFaction;
+    protected bool _isAttacking;
+    protected HealthComponent _healthComponent;
 
     #endregion
 
@@ -59,9 +64,37 @@ public class Unit : MonoBehaviour
 
     #region Public Methods
 
-    public virtual void Attack()
+    public virtual void Attack(GameObject enemyObject)
     {
 
+    }
+
+    public bool CanAttack()
+    {
+        return !_isAttacking;
+    }
+
+    public void ChangeGoal(GOAL_TYPE type)
+    {
+        if(type == GOAL_TYPE.ATTACK_CASTLE)
+        {
+            _currentGoal = new AttackCastle(EnemyCastle, this);
+        }
+        else
+        {
+            _currentGoal = new AttackNearestEnemy(findEnemy(), this);
+        }
+    }
+
+    public Unit findEnemy()
+    {
+        Collider2D collider = Physics2D.OverlapCircle(transform.position, AttackRange);
+        if (collider != null && collider.tag == _enemyFaction)
+        {
+            return collider.GetComponent<Unit>();
+        }
+
+        return null;
     }
 
     #endregion

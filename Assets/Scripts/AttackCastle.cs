@@ -17,6 +17,7 @@ public class AttackCastle : Goal
     public AttackCastle(Castle enemy, Unit unit)
     {
         _enemyCastle = enemy;
+        _owner = unit;
     }
 
     #endregion
@@ -28,7 +29,12 @@ public class AttackCastle : Goal
         if(Vector2.Distance(_owner.transform.position, _enemyCastle.transform.position) <= _owner.AttackRange)
         {
             //Attack
-            _owner.Attack();
+            if(_owner.CanAttack())
+                _owner.Attack(_enemyCastle.gameObject);
+        }
+        else if(_owner.findEnemy() != null)
+        {
+            _owner.ChangeGoal(GOAL_TYPE.ATTACK_ENEMY);
         }
         else
         {
