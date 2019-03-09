@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 704779841185674679}
   - component: {fileID: 5690022598052363903}
   - component: {fileID: 4888550297018420257}
+  - component: {fileID: 3301439481281820424}
   m_Layer: 0
   m_Name: PlayerCastle
   m_TagString: Untagged
@@ -28,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 704779841185674676}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 8.07, y: 0.7, z: 0}
-  m_LocalScale: {x: 0.46458817, y: 0.42105246, z: 1}
+  m_LocalScale: {x: 0.45438862, y: 0.38129643, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -94,9 +95,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _unitSpawnPoint: {fileID: 0}
-  _unitsPrefabs: []
+  _unitsPrefabs:
+  - {fileID: 4538258368813817928, guid: 79105e5a3afd96b8dad9075aebe00145, type: 3}
   _enemyCastle: {fileID: 0}
-  FactionName: 
+  _damagedCastle: {fileID: 0}
+  _destroyedCastle: {fileID: 0}
+  FactionName: RED
 --- !u!61 &4888550297018420257
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -123,3 +127,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 13, y: 9.14}
   m_EdgeRadius: 0
+--- !u!114 &3301439481281820424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 704779841185674676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e834528786aa54733afbd3d477948e32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _startHpValue: 1000
+  _deathDelay: 2

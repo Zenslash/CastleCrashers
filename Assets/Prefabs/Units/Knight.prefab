@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7838480582484022149}
   - component: {fileID: 4954082424502877510}
   - component: {fileID: 8759433734587366031}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Knight
   m_TagString: RED
   m_Icon: {fileID: 0}
@@ -129,7 +129,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 6
 --- !u!114 &4954082424502877510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _moveSpeed: 1
   _attackRange: 2
-  _attackDamage: 2
+  _attackDamage: 20
   EnemyCastle: {fileID: 0}
 --- !u!114 &8759433734587366031
 MonoBehaviour:

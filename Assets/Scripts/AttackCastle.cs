@@ -10,6 +10,8 @@ public class AttackCastle : Goal
     private Castle _enemyCastle;
     private Unit _owner;
 
+    private float _stopRadius;
+
     #endregion
 
     #region Callback
@@ -18,6 +20,7 @@ public class AttackCastle : Goal
     {
         _enemyCastle = enemy;
         _owner = unit;
+        _stopRadius = unit.GetComponent<BoxCollider2D>().bounds.size.x / 2;
     }
 
     #endregion
@@ -26,15 +29,19 @@ public class AttackCastle : Goal
 
     public override void Execute()
     {
-        if(Vector2.Distance(_owner.transform.position, _enemyCastle.transform.position) <= _owner.AttackRange)
+        if(Vector2.Distance(_owner.transform.position, _enemyCastle.transform.position) <= _owner.AttackRange + 1.5f)
         {
             //Attack
             if(_owner.CanAttack())
-                _owner.Attack(_enemyCastle.gameObject);
+                _owner.AttackObject(_enemyCastle.gameObject);
         }
         else if(_owner.findEnemy() != null)
         {
             _owner.ChangeGoal(GOAL_TYPE.ATTACK_ENEMY);
+        }
+        else if(DebugUtils.FIND_ENEMY_STATUS == Unit.ALLY_FOUND)
+        {
+            //Wait
         }
         else
         {

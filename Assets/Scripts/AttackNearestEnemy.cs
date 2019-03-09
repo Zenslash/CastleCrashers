@@ -34,7 +34,8 @@ public class AttackNearestEnemy : Goal
     {
         if(_enemyUnit != null)
         {
-            _owner.Attack(_enemyUnit.gameObject);
+            if(_owner.CanAttack())
+                _owner.AttackObject(_enemyUnit.gameObject);
         }
         else
         {

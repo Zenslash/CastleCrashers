@@ -33,7 +33,7 @@ public class KnightUnit : Unit
 
     #region Public Methods
 
-    public override void Attack(GameObject enemyObject)
+    protected override IEnumerator Attack(GameObject enemyObject)
     {
         _isAttacking = true;
 
@@ -47,6 +47,7 @@ public class KnightUnit : Unit
             enemyHealth.DealDamage(_attackDamage);
         }
 
+        yield return new WaitForSeconds(_attackDelay);
         _isAttacking = false;
     }
 

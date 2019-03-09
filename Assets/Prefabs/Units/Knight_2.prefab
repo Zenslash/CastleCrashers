@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3888126066897750903}
   - component: {fileID: 5836963125987383807}
   - component: {fileID: 7454870243947698311}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Knight_2
   m_TagString: BLUE
   m_Icon: {fileID: 0}
@@ -129,7 +129,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 6
 --- !u!114 &5836963125987383807
 MonoBehaviour:
   m_ObjectHideFlags: 0

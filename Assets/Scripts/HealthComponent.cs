@@ -24,6 +24,11 @@ public class HealthComponent : MonoBehaviour
         get { return _currentHpValue; }
     }
 
+    public float CurrentHPAsPercent
+    {
+        get { return ((float)_currentHpValue * 100) / _startHpValue; }
+    }
+
     public bool IsAlive
     {
         get { return !_isDeath; }

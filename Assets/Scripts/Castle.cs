@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public enum UNIT_TYPE { KNIGHT, ARCHER};
@@ -19,14 +20,25 @@ public class Castle : MonoBehaviour
     [SerializeField]
     private Castle _enemyCastle;
 
+    [Header("Texture properties")]
+    [SerializeField]
+    private Sprite _damagedCastle;
+
+    [SerializeField]
+    private Sprite _destroyedCastle;
+
 
     private int totalUnitsPrefabs;
+    private HealthComponent _castleHealth;
+    private bool _isSwitchedToDamageSprite;
+    private bool _isCastleDestroyed;
 
     #endregion
 
     #region Public Variables
 
     public string FactionName;
+    public bool IsSpawnUnits;
 
     #endregion
 
@@ -38,7 +50,23 @@ public class Castle : MonoBehaviour
         Init();
 
         //For development purpose
-        StartCoroutine(TEST_DeployUnitsWithDelay(2f));
+        if(IsSpawnUnits)
+            StartCoroutine(TEST_DeployUnitsWithDelay(2f));
+    }
+
+    private void Update()
+    {
+        if(!_isSwitchedToDamageSprite && _castleHealth.CurrentHPAsPercent <= 50)
+        {
+            GetComponent<SpriteRenderer>().sprite = _damagedCastle;
+            _isSwitchedToDamageSprite = true;
+        }
+        else if(!_isCastleDestroyed && _castleHealth.CurrentHP == 0)
+        {
+            _isCastleDestroyed = true;
+            GetComponent<SpriteRenderer>().sprite = _destroyedCastle;
+            //Loose game
+        }
     }
 
     #endregion
@@ -49,6 +77,9 @@ public class Castle : MonoBehaviour
     private void Init()
     {
         totalUnitsPrefabs = _unitsPrefabs.Length;
+        _castleHealth = GetComponent<HealthComponent>();
+        _isSwitchedToDamageSprite = false;
+        _isCastleDestroyed = false;
     }
 
 

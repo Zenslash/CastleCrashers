@@ -16,6 +16,8 @@ public class Unit : MonoBehaviour
     protected float _attackRange;
     [SerializeField]
     protected int _attackDamage;
+    [SerializeField]
+    protected float _attackDelay = 1f;
 
     protected Goal _currentGoal;
     protected string _enemyFaction;
@@ -36,6 +38,11 @@ public class Unit : MonoBehaviour
     }
 
     public Castle EnemyCastle;
+
+
+    public const int ENEMY_NOT_FOUND = 0;
+    public const int ENEMY_FOUND = 1;
+    public const int ALLY_FOUND = 2;
 
     #endregion
 
@@ -58,15 +65,18 @@ public class Unit : MonoBehaviour
 
     #region Private Methods
 
-
+    protected virtual IEnumerator Attack(GameObject enemyObject)
+    {
+        yield return null;
+    }
 
     #endregion
 
     #region Public Methods
 
-    public virtual void Attack(GameObject enemyObject)
+    public void AttackObject(GameObject enemyObject)
     {
-
+        StartCoroutine(Attack(enemyObject));
     }
 
     public bool CanAttack()
@@ -91,8 +101,24 @@ public class Unit : MonoBehaviour
         Collider2D collider = Physics2D.OverlapCircle(transform.position, AttackRange);
         if (collider != null && collider.tag == _enemyFaction)
         {
+            DebugUtils.FIND_ENEMY_STATUS = ENEMY_FOUND;
             return collider.GetComponent<Unit>();
         }
+        else if(collider != null)
+        {
+            Vector3 castleDir = EnemyCastle.transform.position - transform.position;
+            castleDir.Normalize();
+
+            if ((collider.transform.position - transform.position).x * castleDir.x > 0)
+                DebugUtils.FIND_ENEMY_STATUS = ALLY_FOUND;
+            else
+                DebugUtils.FIND_ENEMY_STATUS = ENEMY_NOT_FOUND;
+        }
+        else
+        {
+            DebugUtils.FIND_ENEMY_STATUS = ENEMY_NOT_FOUND;
+        }
+
 
         return null;
     }
