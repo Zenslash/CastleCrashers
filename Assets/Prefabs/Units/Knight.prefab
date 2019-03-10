@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 8270fb72f090a280e8a60f0cb845b5d9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 14.64, y: 10.28}
@@ -145,6 +145,7 @@ MonoBehaviour:
   _moveSpeed: 1
   _attackRange: 2
   _attackDamage: 20
+  _attackDelay: 1
   EnemyCastle: {fileID: 0}
 --- !u!114 &8759433734587366031
 MonoBehaviour:

@@ -97,10 +97,12 @@ MonoBehaviour:
   _unitSpawnPoint: {fileID: 0}
   _unitsPrefabs:
   - {fileID: 4538258368813817928, guid: 79105e5a3afd96b8dad9075aebe00145, type: 3}
+  - {fileID: 7859417922065018014, guid: 1be4d8cf4342bbc898ffe041de306f2d, type: 3}
   _enemyCastle: {fileID: 0}
-  _damagedCastle: {fileID: 0}
-  _destroyedCastle: {fileID: 0}
+  _damagedCastle: {fileID: 21300000, guid: 110023792a679d6d6af626ead115cbde, type: 3}
+  _destroyedCastle: {fileID: 21300000, guid: 336f98ae6a1e8f7f0adb85a4f0933654, type: 3}
   FactionName: RED
+  IsSpawnUnits: 1
 --- !u!61 &4888550297018420257
 BoxCollider2D:
   m_ObjectHideFlags: 0

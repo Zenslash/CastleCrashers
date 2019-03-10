@@ -112,105 +112,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &228973190
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 228973193}
-  - component: {fileID: 228973192}
-  - component: {fileID: 228973191}
-  m_Layer: 0
-  m_Name: Player_KNIGHT_1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!95 &228973191
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 228973190}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b1067cb68b3eba945a9342b0739325e2, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!212 &228973192
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 228973190}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 16.6, y: 13.65}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!4 &228973193
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 228973190}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.3201118, y: 3.3195047, z: -9.008127}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -322,105 +223,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 815260813}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &698511463
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 698511466}
-  - component: {fileID: 698511465}
-  - component: {fileID: 698511464}
-  m_Layer: 0
-  m_Name: Enemy_KNIGHT_1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!95 &698511464
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 698511463}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: db1aa979c1e168d46826b3d350a4c6f3, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!212 &698511465
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 698511463}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 14.78, y: 10.57}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!4 &698511466
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 698511463}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.3201118, y: 3.3195047, z: -9.008127}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &815260812
 GameObject:
@@ -747,21 +549,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 704779841185674678, guid: 54a8d981f6791efca995dc743c6ed169,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.45438862
-      objectReference: {fileID: 0}
-    - target: {fileID: 704779841185674678, guid: 54a8d981f6791efca995dc743c6ed169,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.38129643
-      objectReference: {fileID: 0}
-    - target: {fileID: 5690022598052363903, guid: 54a8d981f6791efca995dc743c6ed169,
-        type: 3}
-      propertyPath: _unitsPrefabs.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5690022598052363903, guid: 54a8d981f6791efca995dc743c6ed169,
         type: 3}
       propertyPath: _unitSpawnPoint
@@ -772,17 +559,6 @@ PrefabInstance:
       propertyPath: _enemyCastle
       value: 
       objectReference: {fileID: 1663510694}
-    - target: {fileID: 5690022598052363903, guid: 54a8d981f6791efca995dc743c6ed169,
-        type: 3}
-      propertyPath: FactionName
-      value: RED
-      objectReference: {fileID: 0}
-    - target: {fileID: 5690022598052363903, guid: 54a8d981f6791efca995dc743c6ed169,
-        type: 3}
-      propertyPath: _unitsPrefabs.Array.data[0]
-      value: 
-      objectReference: {fileID: 4538258368813817928, guid: 79105e5a3afd96b8dad9075aebe00145,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54a8d981f6791efca995dc743c6ed169, type: 3}
 --- !u!114 &1492115441 stripped
@@ -864,21 +640,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4948887173142299355, guid: 5d1ac5fddb813a17387ca3f44d328f42,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.45438862
-      objectReference: {fileID: 0}
-    - target: {fileID: 4948887173142299355, guid: 5d1ac5fddb813a17387ca3f44d328f42,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.38129643
-      objectReference: {fileID: 0}
-    - target: {fileID: 409740489142881428, guid: 5d1ac5fddb813a17387ca3f44d328f42,
-        type: 3}
-      propertyPath: _unitsPrefabs.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 409740489142881428, guid: 5d1ac5fddb813a17387ca3f44d328f42,
         type: 3}
       propertyPath: _unitSpawnPoint
@@ -889,17 +650,6 @@ PrefabInstance:
       propertyPath: _enemyCastle
       value: 
       objectReference: {fileID: 1492115441}
-    - target: {fileID: 409740489142881428, guid: 5d1ac5fddb813a17387ca3f44d328f42,
-        type: 3}
-      propertyPath: FactionName
-      value: BLUE
-      objectReference: {fileID: 0}
-    - target: {fileID: 409740489142881428, guid: 5d1ac5fddb813a17387ca3f44d328f42,
-        type: 3}
-      propertyPath: _unitsPrefabs.Array.data[0]
-      value: 
-      objectReference: {fileID: 3471131593160981526, guid: 14d1cf777f88bd6a398394ff7b5d2ade,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d1ac5fddb813a17387ca3f44d328f42, type: 3}
 --- !u!114 &1663510694 stripped

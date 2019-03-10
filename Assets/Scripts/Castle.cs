@@ -49,9 +49,6 @@ public class Castle : MonoBehaviour
     {
         Init();
 
-        //For development purpose
-        if(IsSpawnUnits)
-            StartCoroutine(TEST_DeployUnitsWithDelay(2f));
     }
 
     private void Update()
@@ -87,6 +84,8 @@ public class Castle : MonoBehaviour
     {
         spawnUnit(UNIT_TYPE.KNIGHT);
         yield return new WaitForSeconds(delay);
+        spawnUnit(UNIT_TYPE.ARCHER);
+        yield return new WaitForSeconds(delay);
         StartCoroutine(TEST_DeployUnitsWithDelay(delay));
     }
 
@@ -111,6 +110,8 @@ public class Castle : MonoBehaviour
             case UNIT_TYPE.ARCHER:
 
                 npc = Instantiate(_unitsPrefabs[1], _unitSpawnPoint);
+                ArcherUnit comp2 = npc.GetComponent<ArcherUnit>();
+                comp2.EnemyCastle = _enemyCastle;
                 //Init stuff
 
                 break;

@@ -18,6 +18,8 @@ public class Unit : MonoBehaviour
     protected int _attackDamage;
     [SerializeField]
     protected float _attackDelay = 1f;
+    [SerializeField]
+    protected float _stopRadius = 1.5f;
 
     protected Goal _currentGoal;
     protected string _enemyFaction;
@@ -108,6 +110,7 @@ public class Unit : MonoBehaviour
         {
             Vector3 castleDir = EnemyCastle.transform.position - transform.position;
             castleDir.Normalize();
+            collider = Physics2D.OverlapCircle(transform.position, _stopRadius);
 
             if ((collider.transform.position - transform.position).x * castleDir.x > 0)
                 DebugUtils.FIND_ENEMY_STATUS = ALLY_FOUND;

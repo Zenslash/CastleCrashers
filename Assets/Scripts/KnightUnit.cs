@@ -29,9 +29,6 @@ public class KnightUnit : Unit
     #endregion
 
     #region Private Methods
-    #endregion
-
-    #region Public Methods
 
     protected override IEnumerator Attack(GameObject enemyObject)
     {
@@ -42,7 +39,7 @@ public class KnightUnit : Unit
         //Get Health component
         HealthComponent enemyHealth = enemyObject.GetComponent<HealthComponent>();
         //Deal damage
-        if(enemyHealth != null)
+        if (enemyHealth != null)
         {
             enemyHealth.DealDamage(_attackDamage);
         }
@@ -50,6 +47,12 @@ public class KnightUnit : Unit
         yield return new WaitForSeconds(_attackDelay);
         _isAttacking = false;
     }
+
+    #endregion
+
+    #region Public Methods
+
+
 
     #endregion
 
