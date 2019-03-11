@@ -27,11 +27,22 @@ public class Castle : MonoBehaviour
     [SerializeField]
     private Sprite _destroyedCastle;
 
+    [Header("Gameplay properties")]
+    [SerializeField]
+    private int _startCoinsPerTurnValue = 10;
+    [SerializeField]
+    private float _coinReceiveDelay = 5f;
+    [SerializeField]
+    private int _castleUpgradeCost = 50;
+
 
     private int totalUnitsPrefabs;
     private HealthComponent _castleHealth;
     private bool _isSwitchedToDamageSprite;
     private bool _isCastleDestroyed;
+
+    private int _currentCastleLevel = 1;
+    private int _coinsPerTurn;
 
     #endregion
 
@@ -77,6 +88,9 @@ public class Castle : MonoBehaviour
         _castleHealth = GetComponent<HealthComponent>();
         _isSwitchedToDamageSprite = false;
         _isCastleDestroyed = false;
+
+        _coinsPerTurn = _startCoinsPerTurnValue;
+        StartCoroutine(ReceiveCash());
     }
 
 
@@ -89,11 +103,36 @@ public class Castle : MonoBehaviour
         StartCoroutine(TEST_DeployUnitsWithDelay(delay));
     }
 
+    private IEnumerator ReceiveCash()
+    {
+        if(FactionName == "RED")
+        {
+            while (true)
+            {
+                GameManager.Instance.CurrentREDCoinValue += _coinsPerTurn;
+                yield return new WaitForSeconds(_coinReceiveDelay);
+
+                yield return null;
+            }
+        }
+        else
+        {
+            while (true)
+            {
+                GameManager.Instance.CurrentBLUECoinValue += _coinsPerTurn;
+                yield return new WaitForSeconds(_coinReceiveDelay);
+
+                yield return null;
+            }
+        }
+
+    }
+
     #endregion
 
     #region Public Methods
 
-    private void spawnUnit(UNIT_TYPE unit_type)
+    public void spawnUnit(UNIT_TYPE unit_type)
     {
 
         GameObject npc;
@@ -117,8 +156,29 @@ public class Castle : MonoBehaviour
                 break;
         }
 
-        
+    }
 
+    public void UpgradeCastle()
+    {
+        if(FactionName == "RED")
+        {
+            if(GameManager.Instance.ConsumeCoins(_castleUpgradeCost, "RED"))
+            {
+                //Upgrade RED castle
+                _currentCastleLevel++;
+                //Increase upgrade cost
+                //Increase health
+                //Increase coins per second
+            }
+        }
+        else
+        {
+            if(GameManager.Instance.ConsumeCoins(_castleUpgradeCost, "BLUE"))
+            {
+                //Upgrade BLUE castle
+                _currentCastleLevel++;
+            }
+        }
     }
 
     #endregion
